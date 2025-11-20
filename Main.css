@@ -1,0 +1,605 @@
+/* ===========================
+   TWINMEMORY — GLOBAL THEME
+   =========================== */
+:root {
+  --bg: #f5f7fc;
+  --white: #ffffff;
+  --primary: #6b5cff;
+  --secondary: #2fc8c8;
+  --gradient: linear-gradient(135deg, #6b5cff, #2fc8c8);
+  --text-main: #1a1c27;
+  --text-muted: #55596d;
+  --radius: 20px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --max-width: 1100px;
+}
+
+/* ===========================
+   RESET
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* ===========================
+   NAVIGATION — WHITE CLEAN BAR
+   =========================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 14px 0;
+  background: #ffffff; /* PURE WHITE */
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 100;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.04);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  height: 50px;     /* BIGGER LOGO */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* NAV LINKS */
+.nav-links a {
+  margin-left: 32px;
+  text-decoration: none;
+  color: #3d3d4d;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+/* ===========================
+   HERO IMAGE (NEW)
+   =========================== */
+.hero {
+  position: relative;
+  height: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+
+/* The hero image */
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right top;; /* Keeps man on right */
+}
+
+/* TwinMemory gradient overlay on LEFT side */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;        /* only under the text */
+  height: 100%;
+  background: rgba(0,0,0,0.20);  /* subtle, neutral */
+  z-index: 1;
+}
+
+/* Text content on hero */
+.hero-content {
+  position: absolute;
+  top: 60%;          /* Move DOWN */
+  left: 6%;          /* Move LEFT */
+  transform: translateY(-50%);  /* Vertical centering only */
+  max-width: 520px;  /* Keeps your current font looking good */
+  text-align: left;  /* Make sure it aligns cleanly */
+}
+
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+}
+
+
+.hero-content p {
+  margin-top: 16px;
+  font-size: 1.1rem;
+  color: var(--white);
+}
+.hero-actions {
+  margin-top: 34px;
+}
+
+/* ===========================
+   STATS SECTION
+   =========================== */
+.stats {
+  margin-top: 40px;  /* was -60px (remove negative overlap) */
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 22px;
+}
+
+.stat-card {
+  background: var(--white);
+  padding: 26px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.stat-card .num {
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.stat-card .label {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===========================
+   FEATURES SECTION
+   =========================== */
+.features {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  max-width: 540px;
+  margin: auto;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: var(--white);
+  padding: 28px;
+  border-radius: var(--radius);
+  text-align: left;
+  box-shadow: var(--shadow);
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* ===========================
+   TESTIMONIALS
+   =========================== */
+.testimonials {
+  padding: 80px 0;
+}
+
+.testimonial-box {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 820px;
+  margin: auto;
+  text-align: center;
+}
+
+.testimonial-box p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* ===========================
+   CTA SECTION
+   =========================== */
+.cta {
+  padding: 90px 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2rem;
+}
+
+.cta input {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-top: 24px;
+  font-size: 1rem;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    height: 650px;
+  }
+
+  .hero-overlay {
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-img {
+    object-position: center;
+  }
+
+  .stats {
+    margin-top: -20px;
+  }
+}
+
+/* CAROUSEL SECTION */
+.tm-carousel {
+  background: #3a7afe;
+  border-radius: 32px;
+  margin: 80px auto;
+  max-width: 1100px;
+  padding: 50px;
+  display: flex;
+  gap: 40px;
+  color: #fff;
+}
+
+/* LEFT PANEL */
+.tm-carousel-left {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tm-carousel-left h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.tm-brain-icon {
+  width: 80%;
+  opacity: 0.85;
+}
+
+/* RIGHT PANEL */
+.tm-carousel-right {
+  flex: 1.6;
+  position: relative;
+}
+
+.tm-slide {
+  display: none;
+  animation: fadeSlide 0.6s ease;
+}
+
+.tm-slide.active {
+  display: block;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* QUOTE */
+.tm-quote {
+  font-size: 1.5rem;
+  line-height: 1.55;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* USER INFO */
+.tm-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tm-avatar {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #6b5cff, #2fc8c8);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tm-name {
+  font-weight: 600;
+}
+
+.tm-stars {
+  color: #ffd369;
+  font-size: 1.1rem;
+}
+
+/* NAV BUTTONS */
+.tm-carousel-nav {
+  margin-top: 40px;
+  display: flex;
+  gap: 12px;
+}
+
+.tm-carousel-nav button {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #3a7afe;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.tm-carousel-nav button:hover {
+  transform: scale(1.1);
+}
+
+/* ===========================
+   WHY TWINMEMORY (BrainSee style)
+   =========================== */
+
+.why-twinmemory {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 120px 0 40px;
+}
+
+.why-left {
+  flex: 1;
+}
+
+.why-left h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.tm-gradient {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.why-sub {
+  font-size: 1.35rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.why-text {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.why-right {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+}
+
+.screenshot-box {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.screenshot-box img {
+  width: 100%;
+  display: block;
+}
+
+
+
+/* ===========================
+   STATS + FEATURES combined
+   =========================== */
+
+.wf-combined {
+  padding: 40px 0 80px;
+}
+
+.wf-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.wf-stat {
+  background: var(--white);
+  padding: 26px 35px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.wf-num {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.wf-label {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.wf-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.wf-sub {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto 40px;
+}
+
+.wf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.wf-card {
+  background: var(--white);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.wf-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 900px) {
+
+  .why-twinmemory {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .why-left h2 {
+    font-size: 2.2rem;
+  }
+
+  .screenshot-box {
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .wf-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
